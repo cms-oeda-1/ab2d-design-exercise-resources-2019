@@ -18,7 +18,7 @@ This repository contains resources related to the **Providing Medicare Claims Da
     * [Claims Data System Claims Data]
 
 ## Details and Instructions: Updates
-[Details and Instructions: Updates]: #details-and-instructions
+[Details and Instructions: Updates]: #details-and-instructions-updates
 
 Please observe the following updates to the Design Exercise's details and instructions:
 
@@ -44,7 +44,7 @@ Some known differences between this Design Exercise and the "real world" problem
 These, and many other, questions and differences will need to be addressed as part of the real-world project.
 
 ## Dictionary of Terms
-[Dictionary of Terms]: #dictionary
+[Dictionary of Terms]: #dictionary-of-terms
 
 * **User**: A user of your system, which in a more real-world scenario would be a PDP Plan representative, or an authorized vendor or consultant of theirs.
 * **Plan**: A health plan that beneficiaries are members/subscribers of and that users are representatives of.
@@ -55,7 +55,7 @@ These, and many other, questions and differences will need to be addressed as pa
 [Input Data Files]: #input-data-files
 
 ### Access Management System Authentication Data: `input-data-ams-authn.csv`
-[Access Management System Authentication Data]: #input-data-ams-authn
+[Access Management System Authentication Data]: #access-management-system-authentication-data-input-data-ams-authncsv
 
 The `input-data-ams-authn.csv` file is a Comma-Separated Value (CSV) file containing authentication data from the (hypothetical) Access Management System. It contains one row for every user, with the following columns:
 
@@ -66,7 +66,7 @@ The `input-data-ams-authn.csv` file is a Comma-Separated Value (CSV) file contai
 5. `EXPIRES`: The timestamp at which this user's login ceases to be valid.
 
 ### Access Management System Authorization Data: `input-data-ams-authz.csv`
-[Access Management System Authorization Data]: #input-data-ams-authz
+[Access Management System Authorization Data]: #access-management-system-authorization-data-input-data-ams-authzcsv
 
 The `input-data-ams-authz.csv` file is a Comma-Separated Value (CSV) file containing authorization data from the (hypothetical) Access Management System. Each row contains data for a single beneficiary, with the following columns:
 
@@ -75,7 +75,7 @@ The `input-data-ams-authz.csv` file is a Comma-Separated Value (CSV) file contai
 3. `ATTEST_DATE`: The timestamp for when this authorization record was created.
 
 ### Claims Data System Beneficiary Data: `input-data-cds-benes.ndjson`
-[Claims Data System Beneficiary Data]: #input-data-cds-benes
+[Claims Data System Beneficiary Data]: #claims-data-system-beneficiary-data-input-data-cds-benesndjson
 
 The `input-data-cds-benes.ndjson` file is a Newline delimited JSON (NDJSON) file containing FHIR `Patient` resources from the (hypothetical) Claims Data System. Each record in this file is a `Patient` resource containing many fields, including the following (identified by JsonPath specifiers):
 
@@ -83,7 +83,7 @@ The `input-data-cds-benes.ndjson` file is a Newline delimited JSON (NDJSON) file
 2. `$.identifier[?(@.system =~ /https:\/\/bluebutton.cms.gov\/resources\/identifier\/hicn/)].value`: The HICN(s) that CMS uses to identify this beneficiary.
 
 ### Claims Data System Coverage Data: `input-data-cds-coverage.ndjson`
-[Claims Data System Coverage Data]: #input-data-cds-coverage
+[Claims Data System Coverage Data]: #claims-data-system-coverage-data-input-data-cds-coveragendjson
 
 The `input-data-cds-coverage.ndjson` file is a Newline delimited JSON (NDJSON) file containing FHIR `Coverage` resources from the (hypothetical) Claims Data System. Each record in this file is a `Coverage` resource containing many fields, including the following (identified by JsonPath specifiers):
 
@@ -92,7 +92,7 @@ The `input-data-cds-coverage.ndjson` file is a Newline delimited JSON (NDJSON) f
 3. `$.extension[?(@.url =~ /https:\/\/bluebutton.cms.gov\/resources\/variables\/ptdcntrct/)].valueCoding.code`: The `CONTRACT_ID` that the beneficiary represented by this resource is currently enrolled in. Only present for Part D.
 
 ### Claims Data System Claims Data: `input-data-cds-claims.ndjson`
-[Claims Data System Claims Data]: #input-data-cds-claims
+[Claims Data System Claims Data]: #claims-data-system-claims-data-input-data-cds-claimsndjson
 
 The `input-data-cds-claims.ndjson` file is a Newline delimited JSON (NDJSON) file containing FHIR `ExplanationOfBenefit` resources from the (hypothetical) Claims Data System. Each record in this file is an `ExplanationOfBenefit` resource containing many fields, including the following (identified by JsonPath specifiers):
 
